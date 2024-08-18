@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.heading {
+		@apply text-2xl font-semibold text-neutral-800;
+	}
+
+	.subheading {
+		@apply text-neutral-500;
+	}
+}
+
+/* Centers text of all elements except first and last child */
+.text-center-middle :nth-child(n + 2):not(:last-child) {
+	text-align: center;
+}
