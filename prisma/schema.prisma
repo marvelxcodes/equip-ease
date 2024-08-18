@@ -9,6 +9,7 @@ datasource db {
 }
 
 enum BorrowedCartStatus {
+  QUEUED
   BORROWED
   REQUESTED
   RETURNED
@@ -50,7 +51,7 @@ model BorrowedCart {
   id String @id @unique @default(uuid())
 
   equipments   Equipments[]
-  borrowStatus BorrowedCartStatus @default(REQUESTED)
+  borrowStatus BorrowedCartStatus @default(QUEUED)
 
   allotedTime Float
   issuedTime  DateTime @default(now())
