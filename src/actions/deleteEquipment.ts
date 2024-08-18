@@ -9,7 +9,7 @@ const deleteEquipmentActionPayloadSchema = z.object({
 
 export default async function deleteEquipmentAction(formData: FormData) {
 	const { data } = deleteEquipmentActionPayloadSchema.safeParse({
-		id: formData.get('id')
+		id: Number(formData.get('id'))
 	});
 	if (data) {
 		await prisma.equipments.delete({

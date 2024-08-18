@@ -1,7 +1,6 @@
 'use server';
 import { z } from 'zod';
 import prisma from '@/lib/prisma';
-import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 
 const addEquipmentActionPayloadSchema = z.object({
