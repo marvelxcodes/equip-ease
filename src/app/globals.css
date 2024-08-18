@@ -16,3 +16,8 @@
 .text-center-middle :nth-child(n + 2):not(:last-child) {
 	text-align: center;
 }
+
+::selection {
+	background: black;
+	color: white;
+}
