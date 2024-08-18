@@ -11,7 +11,7 @@ const TableCell = ({ className, ...props }: TableCellProps) => {
 		<td
 			scope='col'
 			className={cn(
-				'px-6 py-4 text-center first:text-start whitespace-nowrap text-sm text-gray-800',
+				'px-6 py-4 text-center whitespace-nowrap text-sm text-gray-800',
 				className
 			)}
 			{...props}

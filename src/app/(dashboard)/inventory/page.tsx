@@ -16,7 +16,6 @@ async function fetchData(pageProps: PageProps) {
 	const availability = pageProps.searchParams
 		?.availability as EquipmentAvailabilityEnum;
 
-	console.log(query, availability);
 	const equipments = await prisma.equipments.findMany({
 		where: {
 			AND: [
@@ -24,15 +23,23 @@ async function fetchData(pageProps: PageProps) {
 					availability
 				},
 				{
-					name: {
-						mode: 'insensitive',
-						contains: query
-					}
+					OR: [
+						{
+							id: {
+								equals: Number(query) || 0
+							}
+						},
+						{
+							name: {
+								mode: 'insensitive',
+								contains: query
+							}
+						}
+					]
 				}
 			]
 		}
 	});
-	console.log(equipments);
 	return {
 		equipments
 	};
@@ -89,9 +96,10 @@ const InventoryPage = async ({ searchParams, params }: PageProps) => {
 					</div>
 				</div>
 
-				<Table headers={['Image', 'Name', 'Availability', 'Action']}>
+				<Table headers={['ID', 'Image', 'Name', 'Availability', 'Action']}>
 					{equipments.map((equipment) => (
 						<tr key={equipment.id}>
+							<TableCell>{equipment.id}</TableCell>
 							<TableCell className='w-32'>
 								<Image
 									className='overflow-hidden rounded-md'
