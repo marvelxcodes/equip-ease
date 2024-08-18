@@ -43,13 +43,13 @@ model Equipments {
   availability EquipmentAvailabilityEnum
 
   BorrowedCart   BorrowedCart? @relation(fields: [borrowedCartId], references: [id])
-  borrowedCartId Int?
+  borrowedCartId String?
 }
 
 model BorrowedCart {
-  id Int @id @unique @default(autoincrement())
+  id String @id @unique @default(uuid())
 
-  equipments Equipments[]
+  equipments   Equipments[]
   borrowStatus BorrowedCartStatus @default(REQUESTED)
 
   allotedTime Float
