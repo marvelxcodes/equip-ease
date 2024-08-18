@@ -7,10 +7,10 @@ export default function SignUpPage() {
 		<>
 			<div className='space-y-1 px-6 pt-6'>
 				<h1 className='text-3xl font-bold'>SignUp</h1>
-				<h3 className='text-sm text-neutral-500 hover:underline'>
+				<h3 className='text-sm text-neutral-500'>
 					Already have an Account?{' '}
 					<Link
-						className='font-medium text-black hover:text-neutral-500'
+						className='font-medium text-black hover:text-neutral-500 hover:underline'
 						href='/signin'
 					>
 						SignIn
