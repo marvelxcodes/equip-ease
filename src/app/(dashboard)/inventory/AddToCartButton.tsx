@@ -37,7 +37,9 @@ const AddToCartButton = async ({ id, availability }: AddToCartButtonProps) => {
 				disabled={isAlreadyInCart || availability === 'UNAVAILABLE'}
 				className='text-xs inline-flex gap-x-1'
 			>
-				{isAlreadyInCart ? 'Added to Cart' : 'Add to Cart'}
+				{isAlreadyInCart || availability === 'UNAVAILABLE'
+					? 'Added to Cart'
+					: 'Add to Cart'}
 				<Image
 					className='overflow-hidden invert rounded-md'
 					src={'/icons/cart.svg'}
