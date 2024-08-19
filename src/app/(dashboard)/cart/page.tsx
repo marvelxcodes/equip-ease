@@ -59,7 +59,7 @@ const CartPage = async ({ searchParams, params }: PageProps) => {
 					<CheckoutButton />
 				</div>
 			</div>
-			<div className='flex gap-6'>
+			<div className='flex flex-wrap gap-6'>
 				{/* Carted Items */}
 				<Card>
 					<div className='py-3 px-4 items-center flex flex-wrap gap-3'>
@@ -82,7 +82,9 @@ const CartPage = async ({ searchParams, params }: PageProps) => {
 					<CartStatusTable carts={borrowedCarts} />
 					{borrowedCarts.length === 0 && (
 						<div className='items-center flex flex-col py-3'>
-							<span>--- There is no Requests to show! ---</span>
+							<span className='whitespace-nowrap'>
+								--- There is no Requests to show! ---
+							</span>
 						</div>
 					)}
 				</Card>
