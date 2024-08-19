@@ -69,6 +69,7 @@ pnpm prisma migrate dev --name init`
 ```bash
 pnpm dev
 ```
+
 The application will be available at `http://localhost:3000`.
 
 ### Building for Production
