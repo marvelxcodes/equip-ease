@@ -8,7 +8,7 @@ type TableProps = {
 
 const Table = ({ headers, children }: TableProps) => {
 	return (
-		<div className='overflow-hidden border-t'>
+		<div className='overflow-x-scroll overflow-y-clip border-t'>
 			<table className='min-w-full divide-y divide-gray-200'>
 				<thead className='bg-gray-50'>
 					<tr>

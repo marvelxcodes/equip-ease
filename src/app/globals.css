@@ -21,3 +21,19 @@
 	background: black;
 	color: white;
 }
+
+ /* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+	border-radius: 3px;
+	background-color: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #d1d1d1;
+	border-radius: 3px;
+}

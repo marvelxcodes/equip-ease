@@ -9,7 +9,7 @@ type CardProps = DetailedHTMLProps<
 const Card = ({ className, ...props }: CardProps) => {
 	return (
 		<div
-			className={cn('w-full bg-white rounded-lg border', className)}
+			className={cn('w-full bg-white overflow-hidden rounded-lg border', className)}
 			{...props}
 		/>
 	);
